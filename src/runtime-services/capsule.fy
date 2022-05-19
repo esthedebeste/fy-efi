@@ -34,5 +34,5 @@ struct EFI_MEMORY_RANGE_CAPSULE_RESULT {
 	NumberOfMemoryRanges: UINT64,
 }
 
-type EFI_UPDATE_CAPSULE = *fun(CapsuleHeaderArray: **EFI_CAPSULE_HEADER, CapsuleCount: UINTN, ScatterGatherList: EFI_PHYSICAL_ADDRESS): EFI_STATUS
-type EFI_QUERY_CAPSULE_CAPABILITIES = *fun(CapsuleHeaderArray: **EFI_CAPSULE_HEADER, CapsuleCount: UINTN, MaximumCapsuleSize: *UINT64, ResetType: *EFI_RESET_TYPE): EFI_STATUS
+type EFI_UPDATE_CAPSULE = *fun cc(EFIAPI) (CapsuleHeaderArray: **EFI_CAPSULE_HEADER, CapsuleCount: UINTN, ScatterGatherList: EFI_PHYSICAL_ADDRESS): EFI_STATUS
+type EFI_QUERY_CAPSULE_CAPABILITIES = *fun cc(EFIAPI) (CapsuleHeaderArray: **EFI_CAPSULE_HEADER, CapsuleCount: UINTN, MaximumCapsuleSize: *UINT64, ResetType: *EFI_RESET_TYPE): EFI_STATUS

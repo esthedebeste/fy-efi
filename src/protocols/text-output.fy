@@ -42,14 +42,14 @@ struct SIMPLE_TEXT_OUTPUT_MODE {
 
 struct EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL {
 	// TODO: change This: EFI_PTR_VOID to This: *EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL
-	Reset: *fun(This: EFI_PTR_VOID, ExtendedVerification: BOOLEAN): EFI_STATUS,
-	OutputString: *fun(This: EFI_PTR_VOID, String: *CHAR16): EFI_STATUS,
-	TestString: *fun(This: EFI_PTR_VOID, String: *CHAR16): EFI_STATUS,
-	QueryMode: *fun(This: EFI_PTR_VOID, ModeNumber: UINTN, Columns: *UINTN, Rows: *UINTN): EFI_STATUS,
-	SetMode: *fun(This: EFI_PTR_VOID, ModeNumber: UINTN): EFI_STATUS,
-	SetAttribute: *fun(This: EFI_PTR_VOID, Attribute: UINTN): EFI_STATUS,
-	ClearScreen: *fun(This: EFI_PTR_VOID): EFI_STATUS,
-	SetCursorPosition: *fun(This: EFI_PTR_VOID, Column: UINTN, Row: UINTN): EFI_STATUS,
-	EnableCursor: *fun(This: EFI_PTR_VOID, Visible: BOOLEAN): EFI_STATUS,
+	Reset: *fun cc(EFIAPI) (This: EFI_PTR_VOID, ExtendedVerification: BOOLEAN): EFI_STATUS,
+	OutputString: *fun cc(EFIAPI) (This: EFI_PTR_VOID, String: *CHAR16): EFI_STATUS,
+	TestString: *fun cc(EFIAPI) (This: EFI_PTR_VOID, String: *CHAR16): EFI_STATUS,
+	QueryMode: *fun cc(EFIAPI) (This: EFI_PTR_VOID, ModeNumber: UINTN, Columns: *UINTN, Rows: *UINTN): EFI_STATUS,
+	SetMode: *fun cc(EFIAPI) (This: EFI_PTR_VOID, ModeNumber: UINTN): EFI_STATUS,
+	SetAttribute: *fun cc(EFIAPI) (This: EFI_PTR_VOID, Attribute: UINTN): EFI_STATUS,
+	ClearScreen: *fun cc(EFIAPI) (This: EFI_PTR_VOID): EFI_STATUS,
+	SetCursorPosition: *fun cc(EFIAPI) (This: EFI_PTR_VOID, Column: UINTN, Row: UINTN): EFI_STATUS,
+	EnableCursor: *fun cc(EFIAPI) (This: EFI_PTR_VOID, Visible: BOOLEAN): EFI_STATUS,
 	Mode: *SIMPLE_TEXT_OUTPUT_MODE,
 }

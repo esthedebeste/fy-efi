@@ -6,7 +6,7 @@ const EVT_NOTIFY_WAIT   = 0x00000100 as UINT64
 const EVT_NOTIFY_SIGNAL = 0x00000200 as UINT64
 const EVT_SIGNAL_EXIT_BOOT_SERVICES     = 0x00000201 as UINT64
 const EVT_SIGNAL_VIRTUAL_ADDRESS_CHANGE = 0x60000202 as UINT64
-type EFI_EVENT_NOTIFY = *fun(Event: EFI_EVENT, Context: EFI_PTR_VOID): {} // returns nothing
+type EFI_EVENT_NOTIFY = *fun cc(EFIAPI) (Event: EFI_EVENT, Context: EFI_PTR_VOID): {} // returns nothing
 
 // #define EFI_EVENT_GROUP_EXIT_BOOT_SERVICES {0x27abf055, 0xb1b8, 0x4c26, 0x80, 0x48, 0x74, 0x8f, 0x37, 0xba, 0xa2, 0xdf}}
 // #define EFI_EVENT_GROUP_BEFORE_EXIT_BOOT_SERVICES { 0x8be0e274, 0x3970, 0x4b44, { 0x80, 0xc5, 0x1a, 0xb9, 0x50, 0x2f, 0x3b, 0xfc } }
