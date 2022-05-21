@@ -1,6 +1,6 @@
 include "../common"
 include "./locate" // EFI_LOCATE_SEARCH_TYPE
-include "../protocols/device-path"
+include "../../protocols/device-path"
 
 type EFI_INTERFACE_TYPE = int32 // C enum
 	const EFI_NATIVE_INTERFACE = 0

@@ -1,5 +1,5 @@
-include "../common"
-include "../status"
+include "../src/common"
+include "../src/status"
 
 const EFI_BLACK = 0x00
 const EFI_BLUE = 0x01
@@ -40,16 +40,17 @@ struct SIMPLE_TEXT_OUTPUT_MODE {
 	CursorVisible: BOOLEAN,
 }
 
+const EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL_GUID = create EFI_GUID { 0x387477c2,0x69c7,0x11d2,0x8e,0x39,0x00,0xa0,0xc9,0x69,0x72,0x3b }
 struct EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL {
-	// TODO: change This: EFI_PTR_VOID to This: *EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL
-	Reset: *fun cc(EFIAPI) (This: EFI_PTR_VOID, ExtendedVerification: BOOLEAN): EFI_STATUS,
-	OutputString: *fun cc(EFIAPI) (This: EFI_PTR_VOID, String: *CHAR16): EFI_STATUS,
-	TestString: *fun cc(EFIAPI) (This: EFI_PTR_VOID, String: *CHAR16): EFI_STATUS,
-	QueryMode: *fun cc(EFIAPI) (This: EFI_PTR_VOID, ModeNumber: UINTN, Columns: *UINTN, Rows: *UINTN): EFI_STATUS,
-	SetMode: *fun cc(EFIAPI) (This: EFI_PTR_VOID, ModeNumber: UINTN): EFI_STATUS,
-	SetAttribute: *fun cc(EFIAPI) (This: EFI_PTR_VOID, Attribute: UINTN): EFI_STATUS,
-	ClearScreen: *fun cc(EFIAPI) (This: EFI_PTR_VOID): EFI_STATUS,
-	SetCursorPosition: *fun cc(EFIAPI) (This: EFI_PTR_VOID, Column: UINTN, Row: UINTN): EFI_STATUS,
-	EnableCursor: *fun cc(EFIAPI) (This: EFI_PTR_VOID, Visible: BOOLEAN): EFI_STATUS,
+	// TODO: change This: EFI_PTR_THIS to This: *EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL
+	Reset: *fun cc(EFIAPI) (This: EFI_PTR_THIS, ExtendedVerification: BOOLEAN): EFI_STATUS,
+	OutputString: *fun cc(EFIAPI) (This: EFI_PTR_THIS, String: *CHAR16): EFI_STATUS,
+	TestString: *fun cc(EFIAPI) (This: EFI_PTR_THIS, String: *CHAR16): EFI_STATUS,
+	QueryMode: *fun cc(EFIAPI) (This: EFI_PTR_THIS, ModeNumber: UINTN, Columns: *UINTN, Rows: *UINTN): EFI_STATUS,
+	SetMode: *fun cc(EFIAPI) (This: EFI_PTR_THIS, ModeNumber: UINTN): EFI_STATUS,
+	SetAttribute: *fun cc(EFIAPI) (This: EFI_PTR_THIS, Attribute: UINTN): EFI_STATUS,
+	ClearScreen: *fun cc(EFIAPI) (This: EFI_PTR_THIS): EFI_STATUS,
+	SetCursorPosition: *fun cc(EFIAPI) (This: EFI_PTR_THIS, Column: UINTN, Row: UINTN): EFI_STATUS,
+	EnableCursor: *fun cc(EFIAPI) (This: EFI_PTR_THIS, Visible: BOOLEAN): EFI_STATUS,
 	Mode: *SIMPLE_TEXT_OUTPUT_MODE,
 }

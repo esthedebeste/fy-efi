@@ -1,7 +1,7 @@
 include "./common"
 include "./table-header"
-include "./protocols/text-input"
-include "./protocols/text-output"
+include "../protocols/text-input"
+include "../protocols/text-output"
 include "./runtime-services.fy"
 include "./boot-services.fy"
 

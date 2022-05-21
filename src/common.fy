@@ -21,14 +21,16 @@ struct __EFI_VOID_PTR_UNDERLYING__ { ______: uint8 }
 type EFI_PTR_VOID = *__EFI_VOID_PTR_UNDERLYING__
 
 struct EFI_GUID {
-	Data1: UINT32,
-	Data2: UINT16,
-	Data3: UINT16,
-	Data4: UINT8[8],
+	a: UINT32,
+	b: UINT16,
+	c: UINT16,
+	d: UINT8, e: UINT8, f: UINT8, g: UINT8, h: UINT8, i: UINT8, j: UINT8, k: UINT8,
 }
 type EFI_STATUS = UINTN
 type EFI_HANDLE = EFI_PTR_VOID
 type EFI_EVENT = EFI_PTR_VOID
+type EFI_PTR_THIS = *{} // used to represent This: parameters
+
 type EFI_LBA = uint64 // logical block address
 type EFI_TPL = UINTN // task priority level
 type EFI_MAC_ADDRESS = uint8[32] // 32-byte buffer containing a MAC address

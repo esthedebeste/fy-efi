@@ -1,5 +1,5 @@
 include "../common"
-include "../protocols/device-path"
+include "../../protocols/device-path"
 
 type EFI_IMAGE_LOAD = *fun cc(EFIAPI) (BootPolicy: BOOLEAN, ParentImageHandle: EFI_HANDLE, DevicePath: EFI_DEVICE_PATH_PROTOCOL,
 						   SourceBuffer: EFI_PTR_VOID, SourceSize: UINTN, ImageHandle: *EFI_HANDLE): EFI_STATUS
