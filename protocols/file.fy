@@ -29,7 +29,7 @@ struct EFI_FILE_INFO {
 const EFI_FILE_SYSTEM_INFO_ID = create EFI_GUID { 0x09576e93,0x6d3f,0x11d2,0x8e,0x39,0x00,0xa0,0xc9,0x69,0x72,0x3b }
 struct EFI_FILE_SYSTEM_INFO {
 	Size: UINT64,
-	ReadOnly: BOOLEAN,
+	ReadOnly: BOOLEAN, PADDING: UINT8[7],
 	VolumeSize: UINT64,
 	FreeSpace: UINT64,
 	BlockSize: UINT32,
