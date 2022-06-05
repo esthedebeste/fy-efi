@@ -28,7 +28,7 @@ type EFI_MEMORY_TYPE = int32 // C enum
 	const EfiMaxMemoryType = 16
 
 struct EFI_MEMORY_DESCRIPTOR {
-	Type: UINT32,
+	Type: UINT32, Padding: UINT32,
 	PhysicalStart: EFI_PHYSICAL_ADDRESS,
 	VirtualStart: EFI_VIRTUAL_ADDRESS,
 	NumberOfPages: UINT64,
